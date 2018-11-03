@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcd1d5fb-ccd6-43ff-bff1-a1e789ff482c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/__test__/min-heap.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/heap-calculations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -72,8 +73,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/max-heap.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="388">
-                  <caret line="72" column="51" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
+                <state relative-caret-position="288">
+                  <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -149,9 +150,9 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="1443" />
-    <option name="y" value="-95" />
+    <option name="y" value="13" />
     <option name="width" value="1670" />
     <option name="height" value="890" />
   </component>
@@ -233,15 +234,15 @@
       <workItem from="1540489912045" duration="44000" />
       <workItem from="1541005478969" duration="286000" />
       <workItem from="1541133297912" duration="439000" />
-      <workItem from="1541209415209" duration="743000" />
+      <workItem from="1541209415209" duration="1276000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12155000" />
+    <option name="totallyTimeSpent" value="12688000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1443" y="-95" width="1670" height="890" extended-state="0" />
+    <frame x="1443" y="13" width="1670" height="890" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49848023" weight="0.2494043" />
@@ -294,17 +295,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/max-heap.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="72" column="51" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/__test__/min-heap.test.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/max-heap.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
         </state>
       </provider>
     </entry>
