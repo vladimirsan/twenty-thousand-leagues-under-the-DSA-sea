@@ -1,5 +1,6 @@
 db/
 .idea/
+coverage/
 # Created by https://www.gitignore.io/api/vim,node,macos,linux,windows,webstorm,visualstudiocode
 
 ### Linux ###

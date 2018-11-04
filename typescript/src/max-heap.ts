@@ -36,9 +36,13 @@ class MaxHeap<T> {
         return this._storage.length === 0;
     }
 
-    // public Peek() : T {
-    //
-    // }
+    public Peek() : T {
+        if (this.IsEmpty()) {
+            throw new Error('Heap is empty');
+        }
+
+        return this._storage[0];
+    }
 
     private _bubbleUp(index:number) : void {
         const parentIndex:number = HeapCalculations.GetParentIndex(index);
