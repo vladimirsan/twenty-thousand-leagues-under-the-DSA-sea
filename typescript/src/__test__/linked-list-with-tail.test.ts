@@ -43,6 +43,20 @@ describe('#Linked List', () => {
             list.DeleteFromHead();
             expect(list.Length).toEqual(0);
         });
+
+        test('Deleting from tail should decrease the size', () => {
+            const list:LinkedList<number> = new LinkedList<number>();
+            list.AddToTail(1);
+            list.AddToTail(1);
+            list.AddToTail(1);
+
+            list.DeleteFromTail();
+            expect(list.Length).toEqual(2);
+            list.DeleteFromTail();
+            expect(list.Length).toEqual(1);
+            list.DeleteFromTail();
+            expect(list.Length).toEqual(0);
+        });
     });
 
     describe('#AddToHead', () => {
@@ -148,6 +162,54 @@ describe('#Linked List', () => {
             expect(list.Head).toEqual(null);
             expect(list.Tail).toEqual(null);
             expect(() => list.DeleteFromHead()).toThrow();
+        });
+    });
+
+    describe('#DeleteFromTail', () => {
+        test('Trying to delete from an empty linked list should throw an exception', () => {
+            const list:LinkedList<number> = new LinkedList<number>();
+            expect(() => list.DeleteFromTail()).toThrow();
+        });
+        test('The function should return the value that has been removed', () => {
+            const list:LinkedList<number> = new LinkedList<number>();
+            list.AddToHead(1);
+            list.AddToHead(2);
+            list.AddToHead(3);
+
+            let deletedValue = list.DeleteFromTail();
+            expect(deletedValue).toEqual(1);
+
+            deletedValue = list.DeleteFromTail();
+            expect(deletedValue).toEqual(2);
+
+            deletedValue = list.DeleteFromTail();
+            expect(deletedValue).toEqual(3);
+        });
+        test('Testing Tail update', () => {
+            const list:LinkedList<number> = new LinkedList<number>();
+            list.AddToHead(1);
+            list.AddToHead(2);
+            list.AddToHead(3);
+
+            list.DeleteFromTail();
+            expect(list.Tail.Value).toEqual(2);
+
+            list.DeleteFromTail();
+            expect(list.Tail.Value).toEqual(3);
+        });
+        test('Testing Tail/Head update while removing all the nodes', () => {
+            const list:LinkedList<number> = new LinkedList<number>();
+            list.AddToHead(1);
+            list.AddToHead(2);
+            list.AddToHead(3);
+
+            list.DeleteFromTail();
+            list.DeleteFromTail();
+            expect(list.Head).toEqual(list.Tail);
+            list.DeleteFromTail();
+            expect(list.Head).toEqual(null);
+            expect(list.Tail).toEqual(null);
+            expect(() => list.DeleteFromTail()).toThrow();
         });
     });
     // describe('', () => {

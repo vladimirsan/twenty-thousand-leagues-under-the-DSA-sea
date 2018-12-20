@@ -79,7 +79,25 @@ class LinkedList<T> {
         return deletedValue;
     }
 
-    //TODO: Iterator method
+    public DeleteFromTail() : T {
+        if (this.Length === 0) {
+            throw new Error('The list is empty');
+        }
+        const deletedValue : T = this.Tail.Value;
+        if (this.Length === 1) {
+            this._tail = this._head = null;
+        } else {
+            let currentNode = this.Head;
+            while(currentNode.Next !== this.Tail) {
+                currentNode = currentNode.Next;
+            }
+            // Vinicio - Here, currentnode is the node before the tail
+            currentNode.Next = null;
+            this._tail = currentNode;
+        }
+        this._length--;
+        return deletedValue;
+    }
 }
 
 export default LinkedList;
