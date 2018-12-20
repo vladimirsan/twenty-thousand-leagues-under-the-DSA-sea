@@ -212,6 +212,29 @@ describe('#Linked List', () => {
             expect(() => list.DeleteFromTail()).toThrow();
         });
     });
+    describe('#Iterator', () => {
+        test('An empty linked list should return a null iterator', () => {
+            const list:LinkedList<number> = new LinkedList<number>();
+            for(let element of list) {
+                // Vinicio - This line should never happen
+                expect(1).toEqual(2);
+            };
+        });
+
+        test('Testing basic for...of', () => {
+            const list:LinkedList<number> = new LinkedList<number>();
+            list.AddToTail(1);
+            list.AddToTail(2);
+            list.AddToTail(3);
+
+            let i = 1;
+            for(let element of list) {
+                expect(element).toEqual(i);
+                i++;
+            }
+        });
+    });
+
     // describe('', () => {
         // test('', () => {});
     // });
