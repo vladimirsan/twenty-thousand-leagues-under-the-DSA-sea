@@ -1,3 +1,4 @@
+
 class Node <T>{
     public Value : T;
     public Next : Node<T> | null;
@@ -10,7 +11,7 @@ class Node <T>{
 
 //TODO: Add TSDoc
 //TODO: Add TSlint with AirBnB rules
-class LinkedList<T> {
+class LinkedList<T>  implements Iterable<T>{
     private _head : Node<T> | null;
     private _tail : Node<T> | null;
 
@@ -79,6 +80,7 @@ class LinkedList<T> {
         return deletedValue;
     }
 
+    // O(n) time and O(1) space
     public DeleteFromTail() : T {
         if (this.Length === 0) {
             throw new Error('The list is empty');
@@ -97,6 +99,28 @@ class LinkedList<T> {
         }
         this._length--;
         return deletedValue;
+    }
+
+    [Symbol.iterator]() : Iterator<T> {
+       let currentNode = this._head;
+       return {
+           next() : IteratorResult<T> {
+              if (currentNode === null) {
+                  return {
+                      done: true,
+                      value: null,
+                  }
+              }
+              else {
+                  const returnValue : T = currentNode.Value;
+                  currentNode = currentNode.Next;
+                  return {
+                      done: false,
+                      value: returnValue,
+                  }
+              }
+           }
+       }
     }
 }
 
