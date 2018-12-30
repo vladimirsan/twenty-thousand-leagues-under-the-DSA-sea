@@ -8,36 +8,52 @@ class Node<T> {
   }
 }
 
-// TODO: Add TSDoc
+/**
+ * A linked list that keeps track of its own tail.
+ */
 class LinkedList<T> implements Iterable<T> {
   private head: Node<T> | null;
   private tail: Node<T> | null;
 
   private length: number;
-
+  /**
+   * Creates an empty linked list.
+   */
   constructor() {
     this.head = null;
     this.tail = null;
     this.length = 0;
   }
 
-  // O(1) time and space
-  public get Length() {
+  /**
+   * @remarks
+   * O(1) time and space
+   */
+  public get Length() : number {
     return this.length;
   }
 
-  // O(1) time and space
-  public get Head() {
+  /**
+   * @remarks
+   * O(1) time and space
+   */
+  public get Head() : Node<T> | null {
     return this.head;
   }
 
-  // O(1) time and space
-  public get Tail() {
+  /**
+   * @remarks
+   * O(1) time and space
+   */
+  public get Tail() : Node<T> | null {
     return this.tail;
   }
 
-  // O(1) time and space
-  public addToTail(value: T): void {
+  /**
+   * @remarks
+   * O(1) time and space because we keep a reference to the tail.
+   */
+  public addToTail(value: T) : void {
     const newNode: Node<T> = new Node<T>(value);
     if (this.tail === null) {
       newNode.next = null;
@@ -50,8 +66,11 @@ class LinkedList<T> implements Iterable<T> {
     this.length += 1;
   }
 
-  // O(1) time and space
-  public addToHead(value: T): void {
+  /**
+   * @remarks
+   * O(1) time and space.
+   */
+  public addToHead(value: T) : void {
     const newNode: Node<T> = new Node<T>(value);
     if (this.tail === null) {
       newNode.next = null;
@@ -64,8 +83,12 @@ class LinkedList<T> implements Iterable<T> {
     this.length += 1;
   }
 
-  // O(1) time and space
-  public deleteFromHead(): T {
+  /**
+   * @returns The removed value
+   * @remarks
+   * O(1) time and space.
+   */
+  public deleteFromHead() : T {
     if (this.Length === 0) {
       throw new Error('The list is empty');
     }
@@ -78,8 +101,12 @@ class LinkedList<T> implements Iterable<T> {
     return deletedValue;
   }
 
-  // O(n) time and O(1) space
-  public deleteFromTail(): T {
+  /**
+   * @returns The removed value
+   * @remarks
+   * O(n) time and O(1) space
+   */
+  public deleteFromTail() : T {
     if (this.Length === 0) {
       throw new Error('The list is empty');
     }
@@ -91,7 +118,7 @@ class LinkedList<T> implements Iterable<T> {
       while (currentNode.next !== this.Tail) {
         currentNode = currentNode.next;
       }
-      // Vinicio - Here, currentnode is the node before the tail
+      // Vinicio - Here, currentNode is the node before the tail
       currentNode.next = null;
       this.tail = currentNode;
     }
@@ -99,10 +126,16 @@ class LinkedList<T> implements Iterable<T> {
     return deletedValue;
   }
 
-  // Vinicio - tslint complains about this name since it doesn't follow
-  // airBnB rules, but since the name it's a symbol, there is no way around it.
+  /**
+   * Iterator function. This gives us the ability to use the class in a for...of loop
+   * @returns A custom iterator
+   * @remarks
+   * O(n) time and O(1) space (this analysis doesn't consider the usage of the iterator)
+   */
   // tslint:disable-next-line
-  [Symbol.iterator](): Iterator<T> {
+  [Symbol.iterator]() : Iterator<T> {
+    // Vinicio - tslint complains about this name since it doesn't follow
+    // airBnB rules, but since the name it's a symbol, there is no way around it.
     let currentNode = this.head;
     return {
       next(): IteratorResult<T> {
