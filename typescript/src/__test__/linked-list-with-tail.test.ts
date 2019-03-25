@@ -1,5 +1,7 @@
 import LinkedListWithTail from '../Linked-list-with-tail';
 
+// Arrange, Act, Assert
+
 describe('#Linked List', () => {
   describe('#Length', () => {
     test('A new linked list should have 0 for size', () => {

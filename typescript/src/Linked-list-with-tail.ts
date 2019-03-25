@@ -1,7 +1,17 @@
+/**
+ * Internal generic node class.
+ */
 class Node<T> {
   public value: T;
   public next: Node<T> | null;
 
+  /**
+   * Creates a node with its corresponding value and a null next reference
+   * @constructor
+   * @param {T} value - The value to be stored in the node
+   * @remarks
+   * O(1) time and space
+   */
   constructor(value: T) {
     this.value = value;
     this.next = null;
@@ -9,7 +19,7 @@ class Node<T> {
 }
 
 /**
- * A linked list that keeps track of its own tail.
+ * A generic linked list that keeps track of its own tail and its own length.
  */
 class LinkedList<T> implements Iterable<T> {
   private head: Node<T> | null;
@@ -17,15 +27,18 @@ class LinkedList<T> implements Iterable<T> {
 
   private length: number;
   /**
-   * Creates an empty linked list.
-   */
+   * Creates an empty linked list. Head and tail will be set to null.
+   * @remarks
+   * O(1) time and space
+  */
   constructor() {
     this.head = null;
     this.tail = null;
     this.length = 0;
   }
-
   /**
+   * Returns the length of the linked list.
+   * @returns {number} - The length of the linked list.
    * @remarks
    * O(1) time and space
    */
@@ -34,6 +47,8 @@ class LinkedList<T> implements Iterable<T> {
   }
 
   /**
+   * Returns the head of the linked list.
+   * @returns {Node<T> | null} - The head of the linked list.
    * @remarks
    * O(1) time and space
    */
@@ -42,6 +57,8 @@ class LinkedList<T> implements Iterable<T> {
   }
 
   /**
+   * Returns the tail of the linked list.
+   * @returns {Node<T> | null} - The tail of the linked list.
    * @remarks
    * O(1) time and space
    */
@@ -50,6 +67,9 @@ class LinkedList<T> implements Iterable<T> {
   }
 
   /**
+   * Appends a new node to the linked list.
+   * @param {T} value - The value to be added to the new node
+   * @returns void
    * @remarks
    * O(1) time and space because we keep a reference to the tail.
    */
@@ -67,6 +87,9 @@ class LinkedList<T> implements Iterable<T> {
   }
 
   /**
+   * Prepends a value to the linked list.
+   * @param  {T} value - The value to be added
+   * @returns void
    * @remarks
    * O(1) time and space.
    */
@@ -84,7 +107,7 @@ class LinkedList<T> implements Iterable<T> {
   }
 
   /**
-   * @returns The removed value
+   * @returns {T} - The removed value
    * @remarks
    * O(1) time and space.
    */
@@ -102,7 +125,7 @@ class LinkedList<T> implements Iterable<T> {
   }
 
   /**
-   * @returns The removed value
+   * @returns {T} - The removed value
    * @remarks
    * O(n) time and O(1) space
    */
@@ -128,9 +151,9 @@ class LinkedList<T> implements Iterable<T> {
 
   /**
    * Iterator function. This gives us the ability to use the class in a for...of loop
-   * @returns A custom iterator
+   * @returns {Iterator<T>} - A custom iterator
    * @remarks
-   * O(n) time and O(1) space (this analysis doesn't consider the usage of the iterator)
+   * O(1) time and O(1) space (this analysis doesn't consider the usage of the iterator)
    */
   // tslint:disable-next-line
   [Symbol.iterator]() : Iterator<T> {
