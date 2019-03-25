@@ -1,11 +1,12 @@
 {
-  "name": "typescript-express",
+  "name": "typescript",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "docs": "typedoc --out dist/docs --mode modules"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "ts-jest": "^23.10.5",
     "tslint": "^5.14.0",
     "tslint-config-airbnb": "^5.11.1",
-    "tsutils": "^3.9.1"
+    "tsutils": "^3.9.1",
+    "typedoc": "^0.14.2"
   }
 }
