@@ -1,4 +1,6 @@
-import LinkedListWithTail from '../Linked-list-with-tail';
+import LinkedListWithTail from '../LinkeListWithTail';
+
+// Arrange, Act, Assert
 
 describe('#Linked List', () => {
   describe('#Length', () => {
